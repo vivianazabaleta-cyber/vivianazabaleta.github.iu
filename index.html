@@ -1,317 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Viviana Andrea Rueda Zabaleta • Professional Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style>
-    :root {
-      --bg: #050816;
-      --bg-alt: #0f172a;
-      --accent: #38bdf8;
-      --accent-soft: rgba(56, 189, 248, 0.15);
-      --text: #e5e7eb;
-      --muted: #9ca3af;
-      --card: #020617;
-      --border: #1f2937;
-      --shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
-      --radius-lg: 18px;
-      --radius-sm: 999px;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viviana Rueda | Professional Portfolio</title>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    <style>
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            background-color: #F5F5F5;
+            color: #0F3D3E;
+        }
 
-    body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background-image: url('fondo-azul-oscuro.jpg.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: var(--text);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
+        header {
+            background-color: #0F3D3E;
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
 
-    .noise {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: 0.08;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='no'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.6'/%3E%3C/svg%3E");
-      mix-blend-mode: soft-light;
-      z-index: 0;
-    }
+        nav {
+            background-color: #C9A86A;
+            padding: 15px;
+            text-align: center;
+        }
 
-    main {
-      position: relative;
-      z-index: 1;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 32px 20px 60px;
-    }
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+        }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 32px;
-    }
+        section {
+            padding: 40px;
+            max-width: 900px;
+            margin: auto;
+        }
 
-    .logo {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 6px 14px;
-      border-radius: var(--radius-sm);
-      background: linear-gradient(120deg, rgba(56, 189, 248, 0.18), rgba(129, 140, 248, 0.18));
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      backdrop-filter: blur(10px);
-    }
+        h2 {
+            color: #0F3D3E;
+            border-bottom: 2px solid #C9A86A;
+            padding-bottom: 10px;
+        }
 
-    .logo-icon {
-      width: 22px;
-      height: 22px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 20%, #f97316, #ec4899 40%, #22c55e 80%);
-      box-shadow: 0 0 18px rgba(56, 189, 248, 0.8);
-    }
+        .contact-box {
+            background-color: white;
+            padding: 20px;
+            border-left: 5px solid #C9A86A;
+            margin-top: 20px;
+        }
 
-    .logo-text {
-      font-size: 13px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--text);
-    }
-
-    nav {
-      display: flex;
-      gap: 18px;
-      font-size: 14px;
-    }
-
-    nav a {
-      color: var(--muted);
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 4px;
-    }
-
-    nav a:hover { color: var(--text); }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .section-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .section-card {
-      background: var(--bg-alt);
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(31, 41, 55, 0.9);
-      padding: 18px 18px 20px;
-      box-shadow: var(--shadow);
-    }
-
-    .section-card h2 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .section-card p {
-      font-size: 14px;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .pill {
-      padding: 6px 10px;
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(55, 65, 81, 0.9);
-      font-size: 12px;
-      color: var(--muted);
-      background: rgba(15, 23, 42, 0.9);
-      margin-right: 6px;
-      margin-bottom: 6px;
-      display: inline-block;
-    }
-
-    footer {
-      position: relative;
-      z-index: 1;
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 0 20px 26px;
-      font-size: 12px;
-      color: var(--muted);
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-  </style>
+        footer {
+            background-color: #0F3D3E;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 
 <body>
-  <div class="noise"></div>
 
-  <main>
-    <header>
-      <div class="logo">
-        <div class="logo-icon"></div>
-<h2 style="margin: 0; font-size: 24px; color: #ffffff !important;">
-        <div class="logo-text" style="color: #000000; text-decoration: underline; font-weight: 600;">
-  Viviana • Professional Profile
-</div>
-      </div>
-      <nav>
-        <a href="#summary">Summary</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </nav>
-    </header>
+<header>
+    <h1>Viviana Andrea Rueda Zabaleta</h1>
+    <p>Business Administration Professional | MBA Candidate | Operations & Project Support</p>
+    <p>From Bogotá, Colombia — Based in Las Vegas, Nevada</p>
+</header>
 
-    <!-- CONTACT INFO -->
-    <section class="section" id="contact">
-      <div class="section-label">Contact</div>
-      <div class="section-card">
-        <div style="
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  background: rgba(0,0,0,0.55);
-  padding: 16px;
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-">
-  <img src="viviana.jpg" alt="Viviana Andrea Rueda Zabaleta"
-    style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid #38bdf8;">
-  
-  <div>
-    <h2 style="margin: 0; font-size: 24px; color: #000000 !important; text-decoration: underline;">
-  Viviana Andrea Rueda Zabaleta
-</h2>
-    <p style="margin: 4px 0 0; color: #d1d5db;">
-      Las Vegas, Nevada
-    </p>
-    <p style="color: #d1d5db;">Phone: +1 (702) 8860895</p>
-    <p style="color: #d1d5db;">Email: vivianarueda14@gmail.com</p>
-    <p style="color: #d1d5db;">LinkedIn: linkedin.com/in/viviana-andrea-rueda-zabaleta-927073121</p>
-  </div>
-</div>
-      </div>
-    </section>
+<nav>
+    <a href="#home">Home</a>
+    <a href="#about">About Me</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+</nav>
 
-    <!-- PROFESSIONAL SUMMARY -->
-    <section class="section" id="summary">
-      <div class="section-label">Professional Summary</div>
-      <div class="section-card">
-        <p>
-          Business Administration professional with 6+ years of experience supporting operations across diverse industries. Skilled in managing office workflows, coordinating logistics, preparing documentation, and maintaining organized, efficient processes.
-        </p>
-        <p>
-          Known for strong communication, customer service excellence, adaptability, and proactive problem solving. Currently pursuing an MBA to deepen expertise in finance, strategic management, and operational efficiency.
-        </p>
-        <p>
-          Strong interest in business operations, project coordination, and cross‑functional work—supporting activities such as research and analysis, preparing presentations and reports, tracking milestones, documenting action items, and contributing to process improvements in fast‑paced corporate environments.
-        </p>
-        <p>
-          Seeking internship opportunities beginning in 2027 to apply analytical skills, operational knowledge, and MBA‑level training within dynamic business, transportation, or corporate settings.
-        </p>
-      </div>
-    </section>
+<section id="home">
+    <h2>Home</h2>
+    <p>Welcome to my professional portfolio. I’m a Business Administration professional with experience in operations, customer service, logistics, and administrative support across multiple industries. Currently pursuing my MBA, I’m focused on strengthening my skills in finance, strategic management, and operational efficiency.</p>
+</section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <div class="section-label">Professional Experience</div>
-      <div class="section-card">
-        <h2>GNB Sudameris Bank — Bogotá, Colombia</h2>
-        <p><strong>Bank Teller / Electronic Channels Advisor / Customer Service Agent</strong> (02/2018 – 02/2021)</p>
-        <p>Delivered excellent in-person and phone customer service to premier and general segment clients.</p>
-        <p>Managed cash handling, custody, and daily reconciliation with accuracy and compliance.</p>
-        <p>Processed tax payments, withdrawals, credit card services, apostilles, appropriations, and other financial operations.</p>
-        <p>Provided phone support for digital platforms and assisted clients with transfers, account registration, PSE payments, blocked accounts, and more.</p>
+<section id="about">
+    <h2>About Me</h2>
+    <p>I’m Viviana Rueda, originally from Bogotá, Colombia, now living in Las Vegas. I bring over six years of experience supporting business operations and customer service in fast-paced environments.</p>
+    <p>I specialize in operational support, project coordination, documentation management, and customer service excellence. I’m detail-oriented, adaptable, and passionate about improving processes and supporting cross-functional teams.</p>
+    <p>I’m preparing for internship opportunities in 2027 to apply my MBA training and operational experience within dynamic corporate settings.</p>
+</section>
 
-        <h2>DIRECTV — Bogotá, Colombia</h2>
-        <p><strong>Commercial Assistant / Telesales Assistant</strong> (04/2017 – 12/2017)</p>
-        <p>Supported the Commercial Manager and sales consultants with administrative tasks and daily operations.</p>
-        <p>Coordinated preparation and logistics for internal and external commercial events.</p>
-        <p>Monitored telesales calls and verified compliance with scripts, protocols, and service standards.</p>
+<section id="experience">
+    <h2>Experience</h2>
 
-        <h2>Computel System SAS — Bogotá, Colombia</h2>
-        <p><strong>Receptionist</strong> (04/2015 – 04/2017)</p>
-        <p>Provided customer service, managed front-desk operations, and maintained filing systems.</p>
-        <p>Coordinated payment processes and supported accounting workflows.</p>
-        <p>Worked with SAP for data entry, supplier coordination, and administrative tracking.</p>
+    <h3>GNB Sudameris Bank — Bogotá, Colombia</h3>
+    <p><strong>Bank Teller / Electronic Channels Advisor / Customer Service Agent (2018–2021)</strong></p>
+    <ul>
+        <li>Customer service for premier and general clients</li>
+        <li>Cash handling and reconciliation</li>
+        <li>Tax payments, credit card services, and financial operations</li>
+        <li>Support for online and mobile banking</li>
+        <li>Problem resolution and claims management</li>
+    </ul>
 
-        <h2>Geoambiental SA — Bogotá, Colombia</h2>
-        <p><strong>Receptionist</strong> (08/2013 – 04/2015)</p>
-        <p>Provided customer service and administrative support.</p>
-        <p>Managed filing systems, corporate databases, and documentation flow.</p>
-        <p>Coordinated travel arrangements and purchased airline tickets for staff.</p>
+    <h3>DIRECTV — Bogotá, Colombia</h3>
+    <p><strong>Commercial Assistant / Telesales Assistant (2017)</strong></p>
+    <ul>
+        <li>Administrative support for commercial operations</li>
+        <li>Logistics for events</li>
+        <li>Monitoring telesales quality and compliance</li>
+    </ul>
 
-        <h2>Universidad de los Andes — Bogotá, Colombia</h2>
-        <p><strong>Administrative Assistant</strong> (01/2013 – 07/2013)</p>
-        <p>Managed databases, supported logistics for institutional events, and handled document drafting and distribution.</p>
-      </div>
-    </section>
+    <h3>Computel System SAS — Bogotá, Colombia</h3>
+    <p><strong>Receptionist (2015–2017)</strong></p>
+    <ul>
+        <li>Front-desk operations</li>
+        <li>Database and filing management</li>
+        <li>Payment coordination</li>
+        <li>SAP data entry and supplier tracking</li>
+    </ul>
 
-    <!-- EDUCATION -->
-    <section class="section" id="education">
-      <div class="section-label">Education</div>
-      <div class="section-card">
-        <p><strong>MBA</strong> — Caroline University, Los Angeles, USA (Current)</p>
-        <p><strong>Bachelor’s Degree in Business Administration</strong> — University Foundation of the Area Andina, Bogotá (2019)</p>
-        <p><strong>Technologist in Business Management</strong> — SENA, Bogotá (2017)</p>
-        <p><strong>Business Administration Technician</strong> — Campoalto, Bogotá (2013)</p>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section" id="skills">
-      <div class="section-label">Skills</div>
-      <div class="section-card">
-        <span class="pill">Microsoft Office (Word, Excel, PowerPoint, Outlook)</span>
-        <span class="pill">Database & file management</span>
-        <span class="pill">Adaptability</span>
-        <span class="pill">Fast-paced environments</span>
-        <span class="pill">Attention to detail</span>
-        <span class="pill">Independent & team work</span>
-        <span class="pill">Resourceful & proactive</span>
-        <span class="pill">Strong communication</span>
-        <span class="pill">Customer service</span>
-      </div>
-    </section>
-
-    <!-- LANGUAGES -->
-    <section class="section" id="languages">
-      <div class="section-label">Languages</div>
-      <div class="section-card">
-        <span class="pill">Spanish — Native</span>
-        <span class="pill">English — High Intermediate</span>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <span>© <span id="year"></span> Viviana Andrea Rueda Zabaleta</span>
-    <span>Professional Profile</span>
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
-
-
-
-
+    <h3>Geoambiental SA — Bogotá, Colombia</h3>
+    <p><strong>Receptionist (2013–2015)</strong></p>
+    <ul>
+        <li>Administrative
